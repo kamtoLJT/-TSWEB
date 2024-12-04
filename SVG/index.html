@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"> <!-- HTTP 1.1. -->
+    <meta http-equiv="Pragma" content="no-cache"> <!-- HTTP 1.0. -->
+    <meta http-equiv="Expires" content="0"> <!-- Proxies. -->
+    <title>三七导航页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-bar {
+            margin: 20px;
+            width: 80%;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .button-bar {
+            margin: 10px;
+        }
+        .button-bar button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #6c757d;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button-bar button.active {
+            background-color: #007bff;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .tool-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #e9ecef;
+        }
+        .tool-card img {
+            max-width: 50px;
+            margin-right: 15px;
+        }
+        .tool-card-content {
+            text-align: left;
+        }
+        .tool-card h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+        .tool-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        .footer {
+            margin: 20px;
+            font-size: 14px;
+        } 
+        .fixed-size-image {
+             width: 30px;
+             height: 45px;
+        }
+        @font-face {
+            font-family: 'Manrope'; /* 注意这里通常使用大写字母开头的命名习惯 */
+            font-weight: 500;
+            font-display: swap;
+            src: url('https://blog.mctsw.top/manrope-medium.woff2') format('woff2'),
+         url('https://blog.mctsw.top/manrope-medium.woff') format('woff');
+        }
+        body, html { /* 或者你可以更具体地选择其他元素 */
+    font-family: 'Manrope', sans-serif; /* 提供一个后备字体，以防自定义字体加载失败 */
+        }
+        .footer {
+            display: flex;
+            align-items: center;
+        }
+.footer a,
+.footer div {
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直方向居中对齐 */
+    justify-content: center; /* 水平方向居中对齐 */
+    margin-right: 10px;
+    width: 96px;
+    height: 48px;
+    padding: 5px;
+    border: 2px solid #ccc; /* 浅灰色边框 */
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.footer a:hover,
+.footer div:hover {
+    border-color: #007bff; /* 蓝色边框 */
+}
+
+.footer img {
+    width: 96px; /* 图像宽度与父容器相匹配 */
+    height: auto; /* 保持图像比例 */
+}
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="点击此处开始页内搜索">
+    </div>
+    <div class="button-bar">
+        <button id="show-all" class="active">全部站点</button>
+        <button id="show-kamto">By kamto</button>
+    </div>
+    <div class="tool-grid">
+        <div class="tool-card" data-tag="kamto" data-url="http://blog.mctsw.top">
+            <img src="http://files.mctsw.top/头像矢量.svg" alt="博客">
+            <div class="tool-card-content">
+                <h3>博客</h3>
+                <p>我的各种奇怪想法的聚集地</p>
+            </div>
+        </div>
+        <div class="tool-card" data-url="https://files.mctsw.top">
+            <img src="http://files.mctsw.top/文件.svg" alt="文件服务">
+            <div class="tool-card-content">
+                <h3>文件服务</h3>
+                <p>暂时不开放给访客...</p>
+            </div>
+        </div>
+        <div class="tool-card" data-tag="kamto" data-url="http://pdf.mctsw.top/?lang=zh_CN">
+            <img src="http://files.mctsw.top/pdf.svg" alt="PDF编辑服务">
+            <div class="tool-card-content">
+                <h3>PDF编辑服务</h3>
+                <p>集成于服务器的Stirling-PDF</p>
+            </div>
+        </div>
+        <div class="tool-card" data-url="https://music.mctsw.top">
+            <img src="https://files.mctsw.top/player.svg" alt="SPlayer">
+            <div class="tool-card-content">
+                <h3>SPlayer</h3>
+                <p>开源网易云播放器</p>
+            </div>
+        </div>
+        <div class="tool-card" data-url="https://docs.mctsw.top">
+            <img src="http://files.mctsw.top/doc.svg" alt="三七在线文档">
+            <div class="tool-card-content">
+                <h3>三七在线文档</h3>
+                <p>博客在线文档服务</p>
+            </div>
+        </div>
+        <div class="tool-card" data-tag="kamto" data-url="https://blog.mctsw.top/links.html">
+            <img src="https://files.mctsw.top/友链.svg" alt="友情链接">
+            <div class="tool-card-content">
+                <h3>友情链接</h3>
+                <p>这里是博客友情链接的快捷跳转!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://www.mctsw.top/zc.html" target="_blank">
+            <img src="http://files.mctsw.top/个人网站找错.svg" alt="报告错误">
+        </a>
+    </div>
+    <footer class="pt-5em"><div class="flex items-center flex-col md:flex-row gap-1em"><span class="op-50 text-sm"><a href="https://beian.miit.gov.cn/" class="underline mr-2" target="_blank" rel="noopener noreferrer"> 赣ICP备2024042150号 </a> 2020-2024 © kamto</span></div></footer>
+
+
+    <script>
+        const buttons = document.querySelectorAll('.button-bar button');
+        const cards = document.querySelectorAll('.tool-card');
+
+        document.getElementById('search-input').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(query) || description.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('show-all').addEventListener('click', function() {
+            setActiveButton(this);
+            cards.forEach(card => {
+                card.style.display = 'flex';
+            });
+        });
+
+        document.getElementById('show-kamto').addEventListener('click', function() {
+            setActiveButton(this);
+            cards.forEach(card => {
+                if (card.getAttribute('data-tag') === 'kamto') {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const url = card.getAttribute('data-url');
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            });
+        });
+
+        function setActiveButton(activeButton) {
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            activeButton.classList.add('active');
+        }
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then((registrations) => {
+                registrations.forEach(sw => sw.unregister())
+            })
+        }
+
+        self.addEventListener('activate', (e) => {
+            e.waitUntil(
+                caches.keys().then((t) => {
+                    return Promise.all(
+                        t.map((n) => {
+                            return caches.delete(n)
+                        })
+                    )
+                })
+            )
+        })
+        self.skipWaiting()
+
+    </script>
+</body>
+</html>
