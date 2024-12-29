@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="shortcut icon" href="https://files.mctsw.top/logo.ico" />
+    <style>
+        body {
+        font-family: 'Manrope-medium', Manrope, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body.dark-mode {
+        font-family: 'Manrope-medium', Manrope, Arial, sans-serif;
+        background-color: #181818; 
+        color: #f8f9fa; 
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+        }
+        .dark-mode .container {
+            background-color: #333333;
+        }
+        h1 {
+            text-align: center;
+            color: #868da0;
+        }
+        h2 {
+            color: #868da0;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+    </script>
+    </div>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><img src="https://files.mctsw.top/404.svg" alt="404 Not Found" width="200" height="200"></center>
+        <h1>404</h1>
+
+        <h2>?我页面呢？我这么大一个页面呢？？？</h2>
+        <p>啊！是返回首页，我们有救了！</p>
+        <p><a href="https://www.mctsw.top/">返回首页</a></p>
+        <center>
+            <footer class="pt-5em"><div class="flex items-center flex-col md:flex-row gap-1em"><span class="op-50 text-sm">      <a href="https://beian.miit.gov.cn/" class="underline mr-2" target="_blank" rel="noopener noreferrer">
+        赣ICP备2024042150号
+      </a>©2020-2025 @kamto</span></div></footer></center>
+    <!-- 深浅模式切换按钮 -->
+<button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '☀️';
+    } else {
+        toggleButton.textContent = '🌙';
+    }
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+    });
+</script>
+</body>
+</html>
