@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"> <!-- HTTP 1.1. -->
-    <meta http-equiv="Pragma" content="no-cache"> <!-- HTTP 1.0. -->
-    <meta http-equiv="Expires" content="0"> <!-- Proxies. -->
-    <title>三七导航页</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="https://files.mctsw.top/logo.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <title>导航 - 三七世界</title>
     <style>
-/* 浅色模式样式 */
+/* 默认样式 */
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
@@ -30,6 +32,10 @@
     .logo {
       display: flex;
       align-items: center;
+    }
+
+    a {
+      color: #007bff;
     }
 
     .logo img {
@@ -164,6 +170,9 @@
     width: 96px; /* 图像宽度与父容器相匹配 */
     height: auto; /* 保持图像比例 */
 }
+
+
+
 /* 深色模式样式 */
     body.dark-mode {
         font-family: 'Manrope-medium', Manrope, Arial, sans-serif;
@@ -352,11 +361,22 @@
       background-color: var(--button-active-bg-color); /* 激活背景 */
       transform: scale(0.95); /* 激活缩小 */
     }
+
+    .dark-mode .footer img {
+      filter: brightness(200%);
+    }
+
+    .dark-mode a {
+      color: #f8f9fa;
+    }
+
+    .dark-mode .logo {
+      filter: brightness(150%);
+    }
     </style>
 </head>
 <body>
           <!-- 页眉 -->
-          <!-- 深浅模式切换按钮 -->
   <header>
     <div class="logo">
       <img src="https://files.mctsw.top/37/web.svg" alt="网站 Logo">
@@ -437,7 +457,7 @@
     </div>
     <footer class="pt-5em"><div class="flex items-center flex-col md:flex-row gap-1em"><span class="op-50 text-sm">      <a href="https://beian.miit.gov.cn/" class="underline mr-2" target="_blank" rel="noopener noreferrer">
         赣ICP备2024042150号
-      </a>2020-2024 © kamto</span></div></footer>
+      </a>©2020-2025 @kamto</span></div></footer>
 
 
     <script>
