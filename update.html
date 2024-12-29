@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://files.mctsw.top/logo.ico" />
+    <title>更新日志</title>
+    <style>
+        body {
+            font-family: 'Manrope-medium', Manrope, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body.dark-mode {
+            background-color: #181818; 
+            color: #f8f9fa; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+        }
+        .dark-mode .container {
+            background-color: #333333;
+        }
+        h1 {
+            text-align: center;
+            color: #ff5252;
+        }
+        strong {
+            color: #13394c;
+        }
+        herf {
+            color: #267298;
+        }
+        h2 {
+            color: #ff5252;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><img src="https://files.mctsw.top/update.svg" alt="更新" width="325" height="225"></center>
+        <h2>更新日志</h2>
+        <p>
+            2020-08-09，域名mctsw.top注册
+        </p>
+            2024-08-27，域名备案成功
+        </p>
+            2024-09-01，初创网站
+        </p>
+            2024-09-08，使用Halo驱动博客
+        </p>
+            2024-09-09，添加Nav-van作为导航
+        </p>
+            2024-09-09，新增文件、文档、PDF、Splayer
+        </p>
+            2024-09-21，暂时关闭文档、Splayer
+        </p>
+            2024-10-05，文档更改为OpenOffice
+        </p>
+            2024-10-29，Splayer重新开放，Bug仍旧
+        </p>
+            2024-10-31，博客由Halo更改为Typecho
+        </p>
+            2024-11-18，主页由Nav-van更改为自建html
+        </p>
+            2024-12-01，主页深色模式适配
+        </p>
+            2024-12-19，博客深色模式修复
+        </p>
+            2024-12-28，404页面重新编写
+        </p>
+            2024-12-28，找错页面重新编写
+        </p>
+            <center>
+            <footer class="pt-5em"><div class="flex items-center flex-col md:flex-row gap-1em"><span class="op-50 text-sm">      <a href="https://beian.miit.gov.cn/" class="underline mr-2" target="_blank" rel="noopener noreferrer">
+        赣ICP备2024042150号
+      </a>©2020-2025 @kamto</span></div></footer></center>
+          <!-- 深浅模式切换按钮 -->
+    <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '☀️';
+    } else {
+        toggleButton.textContent = '🌙';
+    }
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+    });
+    </script>
+    </div>
+</body>
+</html>
