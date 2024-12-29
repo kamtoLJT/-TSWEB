@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://files.mctsw.top/logo.ico" />
+    <title>个人网站找错</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body.dark-mode {
+            background-color: #181818; 
+            color: #f8f9fa; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+        }
+        .dark-mode .container {
+            background-color: #333333;
+        }
+        h1 {
+            text-align: center;
+            color: #ff5252;
+        }
+        strong {
+            color: #13394c;
+        }
+        .dark-mode strong {
+            color: #40c4ff;
+        }
+        a {
+            color: #267298;
+        }
+        .dark-mode a {
+            color: #40c4ff;
+        }
+        h2 {
+            color: #ff5252;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        logo {
+            align-items: center; 
+            height: 80px;
+            margin-right: 20px;
+        }
+        .dark-mode .logo {
+            filter: brightness(150%);
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+        <div class="logo">
+        <img src="https://files.mctsw.top/个人网站找错.svg" alt="报告错误">
+        <h2>联系我</h2>
+        <p>
+            你好，我是本站的开发者木头！如果你在浏览本站有发现任何网页问题，请联系我，谢谢！
+        </p>
+        <h2>联系方式</h2>
+        <p>
+            可以通过以下方式与我反馈：
+        <p>
+        <strong>Github 提交 PR：</strong>
+        <a href="https://github.com/kamtoLJT/-TSWEB" target="_blank">点击此处进入</a>
+        </p>
+        <p>
+        <strong>E-mail 电子邮件：</strong>
+        <a href="mailto:kamtoliu@aol.com">kamtoliu@aol.com</a>
+        </p>
+        <p>
+        <strong>SMS短信：</strong>
+        <a>+852-66894058</a>
+        </p>
+        <p>
+            其余方式一律不理睬，谢谢您的理解！
+        </p>
+        <h2>更新日志</h2>
+        <strong>请前往更新日志页面：</strong>
+        <a href="https://www.mctsw.top/update.html" target="_blank">更新日志</a>
+        <h2>特别感谢</h2>
+        </p>
+            <a href="https://www.dabinqwq.top" target="_blank">Da_Bin</a>
+        </p>
+            <center>
+            <footer class="pt-5em"><div class="flex items-center flex-col md:flex-row gap-1em"><span class="op-50 text-sm">      <a href="https://beian.miit.gov.cn/" class="underline mr-2" target="_blank" rel="noopener noreferrer">
+        赣ICP备2024042150号
+      </a>©2020-2025 @kamto</span></div></footer></center>
+                <!-- 深浅模式切换按钮 -->
+    <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '☀️';
+    } else {
+        toggleButton.textContent = '🌙';
+    }
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️';
+        } else {
+            toggleButton.textContent = '🌙';
+        }
+    });
+    </script>
+    </div>
+</body>
+</html>
